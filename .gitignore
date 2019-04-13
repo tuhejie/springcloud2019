@@ -1,0 +1,23 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+logs
+.DS_Store
+.idea
+*.iml
+/bin/
+
+node_modules
+maoxf-manage/main
+/.metadata/
+maoxf-admin/.vscode
+.vscode
+.history
+
