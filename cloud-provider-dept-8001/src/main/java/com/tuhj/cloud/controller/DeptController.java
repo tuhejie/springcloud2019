@@ -36,9 +36,4 @@ public class DeptController {
 		return service.list();
 	}
 	
-	@PostMapping(value = "/test")
-	public String test() {
-		return "Hello Word !!!";
-	}
-	
 }
