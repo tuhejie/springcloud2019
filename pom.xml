@@ -1,20 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.tuhj.springcloud</groupId>
-  <artifactId>cloud</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tuhj.springcloud</groupId>
+	<artifactId>cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		
+
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<lombok.version>1.16.18</lombok.version>
 	</properties>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -64,10 +66,39 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-  
+	
+	<!-- 构件信息 -->
+	<build>
+		<finalName>cloud</finalName>
+		<resources>
+			<resource>
+				<!-- 表示允许访问的资源 -->
+				<directory>src/main/resources</directory>
+				<!-- 表示过滤开启 -->
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<!-- 表示在 src/main/resources 这个路径下面的文件中，以 $ 开头和结尾的数据可以读取 -->
+						<delimit>$</delimit>
+					</delimiters>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<modules>
 		<module>cloud-api</module>
 		<module>cloud-provider-dept-8001</module>
 		<module>cloud-eureka-7001</module>
+		<module>cloud-consumer-dept-80</module>
+		<module>cloud-eurela-7001</module>
+		<module>cloud-eureka-7002</module>
+		<module>cloud-eureka-7003</module>
 	</modules>
 </project>
