@@ -19,8 +19,11 @@ import com.netflix.loadbalancer.ZoneAvoidanceRule;
 public class ConfigBean { // @Configuration配置的 ConfigBean 等同于 applicationContext.xml
 
 	@Bean
-	@LoadBalanced // Spring Cloud Ribbon 是基于 Netflix Ribbon 实现的一套 客户端 负载均工具（添加 @LoadBalanced
-					// 注解后，能直接实现客户端的负载均衡）
+	/**
+	 * Spring Cloud Ribbon 是基于 Netflix Ribbon 实现的一套 客户端 负载均工具，
+	 * （添加 @LoadBalanced 注解后，能直接实现客户端的负载均衡）
+	 */
+	@LoadBalanced
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
