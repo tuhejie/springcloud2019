@@ -105,5 +105,6 @@
 		<module>cloud-consumer-dept-feign</module>
 		<module>cloud-provider-dept-hystrix-8001</module>
 		<module>cloud-consumer-hystrix-dashboard</module>
+		<module>cloud-zuul-gateway-9527</module>
 	</modules>
 </project>
